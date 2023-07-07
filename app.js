@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== "production") {
+  require('dotenv').config();
+}
+
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
@@ -15,7 +19,8 @@ const LocalStrategy = require('passport-local');
 const Campground = require('./models/campground')
 const Review = require('./models/review');
 const User = require('./models/user');
-
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' }) 
 
 // import routers
 const campgroundsRoutes = require('./routes/campgrounds');

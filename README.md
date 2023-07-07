@@ -37,16 +37,14 @@ npm install
   modern applications
 - [Mongoose](https://mongoosejs.com/) - Elegant MongoDB object modeling for Node.js
 - [ejs](https://ejs.co/) - Embedded JavaScript templating
+- [joi](https://joi.dev/) - A schema description language and data validator for JavaScript.
+- [Cloudinary] (https://cloudinary.com/) - Media management platform, an end-to-end solution for image and videos solution.
+- [connect-flash] -For session to store messages and display to the user.
+- [Passport-Local Mongoose] A Mongoose plugin that simplifies building username and password login with Passport.
+- [multer] Middleware for handling data for uploading files.
+- [bs-custom-file-input] Display file names for multiple input.
 
-Create a .env file (or just export manually in the terminal) in the root of the project and add the following:
-
-```
-DATABASEURL='<url>'
-API_KEY=''<key>
-API_SECRET='<secret>'
-```
-
-Run `mongod` in another terminal and `node app.js` in the terminal with the project.
+Run `mongod` in another terminal and `nodemon app` in the terminal with the project.
 
 Then go to [localhost:3000](http://localhost:3000/).
 
