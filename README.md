@@ -38,8 +38,8 @@ npm install
 - [Mongoose](https://mongoosejs.com/) - Elegant MongoDB object modeling for Node.js
 - [ejs](https://ejs.co/) - Embedded JavaScript templating
 - [joi](https://joi.dev/) - A schema description language and data validator for JavaScript.
-- [Cloudinary] (https://cloudinary.com/) - Media management platform, an end-to-end solution for image and videos solution.
-- [connect-flash] -For session to store messages and display to the user.
+- [Cloudinary](https://cloudinary.com/) - Media management platform, an end-to-end solution for image and videos solution.
+- [connect-flash] - For session to store messages and display to the user.
 - [Passport-Local Mongoose] A Mongoose plugin that simplifies building username and password login with Passport.
 - [multer] Middleware for handling data for uploading files.
 - [bs-custom-file-input] Display file names for multiple input.

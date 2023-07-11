@@ -5,3 +5,4 @@
 // npm i dotenv
 // npm i multer-storage-cloudinary
 // npm i bs-custom-file-input
+// npm i @mapbox/mapbox-sdk
