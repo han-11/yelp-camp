@@ -2,7 +2,7 @@
 
 <a href="https://my-campground.herokuapp.com/">
  <p align="center">
-  <img src="https://images.unsplash.com/photo-1537225228614-56cc3556d7ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80" alt="Campground"
+  <img src="https://images.unsplash.com/photo-1496947850313-7743325fa58c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80" alt="Campground"
  </p>
 </a>
 
