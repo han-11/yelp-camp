@@ -39,6 +39,7 @@ npm install
 - [ejs](https://ejs.co/) - Embedded JavaScript templating
 - [joi](https://joi.dev/) - A schema description language and data validator for JavaScript.
 - [Cloudinary](https://cloudinary.com/) - Media management platform, an end-to-end solution for image and videos solution.
+- [MapBox](https://www.mapbox.com/) - Use APIs, SDKs, and live updating map data give developers tools to build better mapping, navigation, and search experiences across platforms.
 - [connect-flash] - For session to store messages and display to the user.
 - [Passport-Local Mongoose] A Mongoose plugin that simplifies building username and password login with Passport.
 - [multer] Middleware for handling data for uploading files.
