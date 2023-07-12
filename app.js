@@ -9,27 +9,27 @@ const ejsMate = require('ejs-mate');
 const session = require('express-session');
 const flash  =require('connect-flash');
 // A middleware for validating express inputs using Joi schemas
-const Joi = require('joi');
-const {campgroundSchema, reviewSchema} = require('./schemas');
-const catchAsync = require('./utils/catchAsync');
 const ExpressError = require('./utils/ExpressError');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const Campground = require('./models/campground')
-const Review = require('./models/review');
 const User = require('./models/user');
-const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' }) 
-
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
+const mongoSanitize = require('express-mongo-sanitize');
+// const dbURL = process.env.DB_URL;
+const dbURL = 'mongodb://localhost:27017/yelp-camp';
+const MongoStore = require('connect-mongo');
 // import routers
 const campgroundsRoutes = require('./routes/campgrounds');
 const reviewsRoutes = require('./routes/reviews');
 const usersRoutes = require('./routes/users');
 
 
+
+
 // import mongoose schema from models file
-mongoose.connect('mongodb://localhost:27017/yelp-camp', {
+mongoose.connect(dbURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -39,6 +39,8 @@ mongoose.connect('mongodb://localhost:27017/yelp-camp', {
 .catch( err =>{
   console.log(err)
 })
+
+
 
 
 
@@ -55,16 +57,31 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 // use the public js file, put the src tag in biolerplate
 app.use(express.static(path.join(__dirname, 'public'))); 
+// have the sanitizer replace the prohibited characters with the character passed in
+app.use(mongoSanitize());
 
 
+const store = MongoStore.create({
+    mongoUrl: dbURL,
+    touchAfter: 24 * 60 * 60,
+    crypto: {
+        secret: 'thisisthesecret'
+    }
+});
+
+store.on("error", function (e) {
+    console.log("SESSION STORE ERROR", e)
+})
 
 // express session configration 
 const sessionConfig = {
+  name:'session',
   secret: 'thisisthesecret',
   resave: false,
   saveUninitialized: true,
   cookie:{
     httpOnly: true,
+    // secure: true,
     expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
     maxAge: 1000 * 60 * 60 * 24 * 7
   }
